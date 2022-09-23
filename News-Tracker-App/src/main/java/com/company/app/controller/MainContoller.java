@@ -17,6 +17,17 @@ public class MainContoller {
 	@Autowired
 	private ChartService chartService;
 	
+	@GetMapping("/login")
+	public String login()
+	{
+		return "login";
+	}
+	
+	@GetMapping("/")
+	public String home() {
+		return "index";
+	}
+	
 	@GetMapping("/admin")
 	public String adminPanel(Model model) {
 		List<ChartData> dataList = chartService.getLatestNewsCount();
