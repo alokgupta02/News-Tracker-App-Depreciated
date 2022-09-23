@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
+<script type = "text/javascript" src="/js/select.js"></script>
 </head>
 <body>
 	<!-- sidebar -->
@@ -55,15 +56,16 @@
 
 
 				<div class="sb-sidenav-menu-heading">Performance Report</div>
-				<a class="nav-link" th:href="@{/admin/inputChart/}">
+				<a class="nav-link" th:href="@{/admin/inputChart/}" onclick="clearStorage();">
 					<div class="sb-nav-link-icon">
 						<i class="fas fa-chart-area"></i>
 					</div> Input
-				</a> <a class="nav-link" th:href="@{/admin/outputChart/}">
+				</a> 
+				<a class="nav-link" th:href="@{/admin/outputChart/}" onclick="clearStorage();">
 					<div class="sb-nav-link-icon">
 						<i class="fas fa-table"></i>
 					</div> Output
-				</a> <a class="nav-link" th:href="@{/admin/reporterChart/}">
+				</a> <a class="nav-link" th:href="@{/admin/reporterChart/}" onclick="clearStorage();">
 					<div class="sb-nav-link-icon">
 						<i class="fas fa-table"></i>
 					</div> Reporter

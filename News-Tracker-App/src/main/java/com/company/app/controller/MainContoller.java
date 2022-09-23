@@ -31,22 +31,18 @@ public class MainContoller {
 	@GetMapping("/admin")
 	public String adminPanel(Model model) {
 		List<ChartData> dataList = chartService.getLatestNewsCount();
-		System.out.println(dataList);
 		List<Integer> latestNewsCount = dataList.stream().map(x -> x.getNewsCount()).collect(Collectors.toList());
 		model.addAttribute("latestNews", latestNewsCount);
 		
 		List<ChartData> dataList1 = chartService.getInputNewsCount();
-		System.out.println(dataList1);
 		List<Integer> inputNewsCount = dataList1.stream().map(x -> x.getNewsCount()).collect(Collectors.toList());
 		model.addAttribute("inputNewsCount", inputNewsCount);
 		
 		List<ChartData> dataList2 = chartService.getOutputNewsCount();
-		System.out.println(dataList2);
 		List<Integer> outputNewsCount = dataList2.stream().map(x -> x.getNewsCount()).collect(Collectors.toList());
 		model.addAttribute("outputNewsCount", outputNewsCount);
 		
 		List<ChartData> dataList3 = chartService.getRejectedNewsCount();
-		System.out.println(dataList3);
 		List<Integer> rejectedNewsCount = dataList3.stream().map(x -> x.getNewsCount()).collect(Collectors.toList());
 		model.addAttribute("rejectedNewsCount", rejectedNewsCount);
 		return "admin";

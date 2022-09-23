@@ -8,16 +8,9 @@
 	crossorigin="anonymous">
 <link href="/css/styles.css" rel="stylesheet" />
 <link href="/css/style.css" rel="stylesheet" />
-
-<script>
-	function jsfunction(){
-	var name = $('#inputId option:selected').text();
-	localStorage.setItem("name", name);
-	}
-</script>
-
+<script type = "text/javascript" src="/js/select.js"></script>
 </head>
-<body>
+<body onload="setName()">
 	<div class="header">
 		<div th:replace="fragments/header :: header"></div>
 	</div>
@@ -25,20 +18,15 @@
 	<sidebar class="sidebar">
 	<div th:replace="fragments/sidebar :: sidebar"></div>
 	</sidebar>
+	
 	<div class="container">
-		<script th:inline="javascript">
-			var someVarName = localStorage.getItem("name");
-			document.getElementById('inputName').textContent=someVarName;		
-		</script>
-
-		<h2 align="center">Input Data Graph</h2>
-		<h4 id="inputName" align="center"></h4>
+		<h4 id="name" align="center"></h4>
 
 		<div id="container"
 			style="width: 1080px; height: 600px; margin: 0 auto"></div>
 
-		<select class="form-control" id="inputId" name="inputId"
-			onchange="if(this.value) window.location.href=this.value;jsfunction()">
+		<select class="form-control" id="memberId" name="memberId"
+			onchange="window.location.href=this.value;getName()">
 			<option value="0" selected disabled>Select Input</option>
 			<option th:each="input : ${inputList}" th:value="${input.id}"
 				th:text="${input.firstName+' '+input.lastName}">
@@ -62,7 +50,7 @@
             type: 'column'
         },
         title: {
-            text: 'Organization'
+            text: 'Input Data Graph'
         },
         xAxis: {
             categories: [[${days}]],
