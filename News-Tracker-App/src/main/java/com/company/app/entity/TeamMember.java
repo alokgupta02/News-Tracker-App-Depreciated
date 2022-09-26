@@ -8,10 +8,11 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data @NoArgsConstructor @AllArgsConstructor @Entity
+@Data @NoArgsConstructor @AllArgsConstructor @Entity @Builder
 @Table(name="team_member")
 public class TeamMember {
 

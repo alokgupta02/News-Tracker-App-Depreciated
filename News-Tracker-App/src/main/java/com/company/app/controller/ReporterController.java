@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.thymeleaf.exceptions.TemplateInputException;
 
 import com.company.app.entity.Reporter;
 import com.company.app.service.ReporterService;
@@ -39,13 +40,10 @@ public class ReporterController {
 	}
 
 	@GetMapping("/admin/reporter/edit/{id}")
-	public String editReporter(@PathVariable int id, Model model){
+	public String editReporter(@PathVariable int id, Model model) throws TemplateInputException{
 		Optional<Reporter> reporter = reporterService.findReporterById(id);
-		if(reporter.isPresent()) {
 			model.addAttribute("reporter",reporter.get());
 			return "add_reporter";
-		}else 
-		return "404";
 	}
 	
 	@GetMapping("/admin/reporter/delete/{id}")

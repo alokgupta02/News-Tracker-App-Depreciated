@@ -1,6 +1,9 @@
 package com.company.app.controller;
 
+import java.util.NoSuchElementException;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -47,8 +50,7 @@ public class NewsController {
 	}
 
 	@GetMapping("/admin/news/edit/{id}")
-	public String editNews(@PathVariable int id, Model model) {
-		// Optional<News> news = newsService.findNewsById(id);
+	public String editNews(@PathVariable int id, Model model) throws NoSuchElementException{
 		int teamId = 1;
 		News news = newsService.findNewsById(id).get();
 		NewsDTO newsDTO = new NewsDTO();
@@ -80,7 +82,7 @@ public class NewsController {
 	}
 
 	@GetMapping("/admin/news/delete/{id}")
-	public String deleteNews(@PathVariable int id) {
+	public String deleteNews(@PathVariable int id) throws EmptyResultDataAccessException{
 		this.newsService.deleteNews(id);
 		return "redirect:/admin/news";
 	}

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.thymeleaf.exceptions.TemplateInputException;
 
 import com.company.app.entity.TeamMember;
 import com.company.app.service.TeamMemberService;
@@ -39,13 +40,10 @@ public class TeamMemberController {
 	}
 	
 	@GetMapping("/admin/team/edit/{id}")
-	public String editMember(@PathVariable int id, Model model){
+	public String editMember(@PathVariable int id, Model model) throws TemplateInputException{
 		Optional<TeamMember> teamMember = teamMemberService.findTeamMemberById(id);
-		if(teamMember.isPresent()) {
 			model.addAttribute("teamMember",teamMember.get());
 			return "add_member";
-		}else 
-		return "404";
 	}
 	
 	@GetMapping("/admin/team/delete/{id}")
