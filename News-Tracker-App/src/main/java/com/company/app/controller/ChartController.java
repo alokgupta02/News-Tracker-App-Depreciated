@@ -35,7 +35,7 @@ public class ChartController {
 		model.addAttribute("inputList", teamMemberService.findByTeam(1));
 		model.addAttribute("days", days);
 		model.addAttribute("news", news);
-		return "inputChart";
+		return "report/inputChart";
 	}
 
 	@GetMapping("/admin/inputChart/{id}")
@@ -47,7 +47,7 @@ public class ChartController {
 		model.addAttribute("inputList", teamMemberService.findByTeam(1));
 		model.addAttribute("days", days);
 		model.addAttribute("news", news);
-		return "inputChart";
+		return "report/inputChart";
 	}
 
 	// output chart controller
@@ -59,7 +59,7 @@ public class ChartController {
 		model.addAttribute("outputList", teamMemberService.findByTeam(2));
 		model.addAttribute("days", days);
 		model.addAttribute("news", news);
-		return "outputChart";
+		return "report/outputChart";
 	}
 
 	@GetMapping("/admin/outputChart/{id}")
@@ -71,7 +71,7 @@ public class ChartController {
 		model.addAttribute("outputList", teamMemberService.findByTeam(2));
 		model.addAttribute("days", days);
 		model.addAttribute("news", news);
-		return "outputChart";
+		return "report/outputChart";
 	}
 
 	// reporter chart controller
@@ -83,7 +83,7 @@ public class ChartController {
 		model.addAttribute("reporterList", reporterService.getAllReporter());
 		model.addAttribute("days", days);
 		model.addAttribute("news", news);
-		return "reporterChart";
+		return "report/reporterChart";
 	}
 
 	@GetMapping("/admin/reporterChart/{id}")
@@ -95,7 +95,7 @@ public class ChartController {
 		model.addAttribute("reporterList", reporterService.getAllReporter());
 		model.addAttribute("days", days);
 		model.addAttribute("news", news);
-		return "reporterChart";
+		return "report/reporterChart";
 	}
 
 }

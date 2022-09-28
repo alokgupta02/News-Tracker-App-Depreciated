@@ -32,14 +32,14 @@ public class NewsController {
 	@GetMapping("/admin/news")
 	public String viewNews(Model model) {
 		model.addAttribute("listNews", newsService.getAllNews());
-		return "news";
+		return "admin/news";
 	}
 
 	@GetMapping("/admin/news/add")
 	public String addNews(Model model) {
 		model.addAttribute("newsDTO", new NewsDTO());
 		model.addAttribute("reportersList", reporterService.getAllReporter());
-		return "add_news";
+		return "admin/add_news";
 	}
 
 	@PostMapping("/admin/news/save")
@@ -78,7 +78,7 @@ public class NewsController {
 		model.addAttribute("reportersList", reporterService.getAllReporter());
 		model.addAttribute("newsDTO", newsDTO);
 
-		return "add_news";
+		return "admin/add_news";
 	}
 
 	@GetMapping("/admin/news/delete/{id}")

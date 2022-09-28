@@ -23,14 +23,14 @@ public class ReporterController {
 	@GetMapping("/admin/reporter")
 	public String viewReporter(Model model){
 		model.addAttribute("listReporters",reporterService.getAllReporter());
-		return "reporters";
+		return "admin/reporters";
 	}
 	
 	@GetMapping("/admin/reporter/add")
 	public String addReporter(Model model) {
 		Reporter reporter = new Reporter();
 		model.addAttribute("reporter", reporter);
-		return "add_reporter";
+		return "admin/add_reporter";
 	}
 	
 	@PostMapping("/admin/reporter/save")
@@ -43,7 +43,7 @@ public class ReporterController {
 	public String editReporter(@PathVariable int id, Model model) throws TemplateInputException{
 		Optional<Reporter> reporter = reporterService.findReporterById(id);
 			model.addAttribute("reporter",reporter.get());
-			return "add_reporter";
+			return "admin/add_reporter";
 	}
 	
 	@GetMapping("/admin/reporter/delete/{id}")

@@ -23,14 +23,14 @@ public class TeamMemberController {
 	@GetMapping("/admin/team")
 	public String viewMember(Model model){
 		model.addAttribute("listTeam",teamMemberService.getAllTeamMember());
-		return "team_member";
+		return "admin/team_member";
 	}
 	
 	@GetMapping("/admin/team/add")
 	public String addMember(Model model) {
 		TeamMember teamMember = new TeamMember();
 		model.addAttribute("teamMember",teamMember);
-		return "add_member";
+		return "admin/add_member";
 	}
 	
 	@PostMapping("/admin/team/save")
@@ -43,7 +43,7 @@ public class TeamMemberController {
 	public String editMember(@PathVariable int id, Model model) throws TemplateInputException{
 		Optional<TeamMember> teamMember = teamMemberService.findTeamMemberById(id);
 			model.addAttribute("teamMember",teamMember.get());
-			return "add_member";
+			return "admin/add_member";
 	}
 	
 	@GetMapping("/admin/team/delete/{id}")

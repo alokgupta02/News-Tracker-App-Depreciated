@@ -20,7 +20,7 @@ public class MainContoller {
 	@GetMapping("/login")
 	public String login()
 	{
-		return "login";
+		return "access/login";
 	}
 	
 	@GetMapping("/")
@@ -45,6 +45,6 @@ public class MainContoller {
 		List<ChartData> dataList3 = chartService.getRejectedNewsCount();
 		List<Integer> rejectedNewsCount = dataList3.stream().map(x -> x.getNewsCount()).collect(Collectors.toList());
 		model.addAttribute("rejectedNewsCount", rejectedNewsCount);
-		return "admin";
+		return "admin/admin";
 	}
 }
