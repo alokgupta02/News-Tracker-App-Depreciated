@@ -39,15 +39,16 @@ class TeamMemberServiceTest {
 	}
 
 	// JUnit test for saveTeamMember method
-	@DisplayName("JUnit test for addTeamMember method")
-	@Test
-	public void given_TeamMemberObj_when_addTeamMember_then_Return_TeamMemberObj() {
-		Mockito.when(teamMemberRepository.save(member))
-			.thenReturn(member);
-		TeamMember actual = teamMemberService.getAllTeamMember(List.of(member.getFirstName()));
-		System.out.println(member);
-		assertThat(member).isNotNull();
-	}
+	/*
+	 * @DisplayName("JUnit test for addTeamMember method")
+	 * 
+	 * @Test public void
+	 * given_TeamMemberObj_when_addTeamMember_then_Return_TeamMemberObj() {
+	 * Mockito.when(teamMemberRepository.save(member)) .thenReturn(member);
+	 * TeamMember actual =
+	 * teamMemberService.getAllTeamMember(List.of(member.getFirstName()));
+	 * System.out.println(member); assertThat(member).isNotNull(); }
+	 */
 
 	/*
 	 * @Test void testGetAllTeamMember() { when(teamMemberRepository.findAll())
