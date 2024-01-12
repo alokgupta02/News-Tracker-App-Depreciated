@@ -13,10 +13,5 @@ public class NewsTrackerApplication implements WebMvcConfigurer {
 
 	public static void main(String[] args) {
 		SpringApplication.run(NewsTrackerApplication.class, args);
-
-		logger.info("this is a info message");
-		logger.warn("this is a warn message");
-		logger.error("this is a error message");
-
 	}
 }

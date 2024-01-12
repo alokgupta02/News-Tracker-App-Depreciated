@@ -67,7 +67,12 @@ public class ChartServiceImpl implements ChartService {
 
 	@Override
 	public List<ChartData> getLatestNewsCount() {
-		String query = "SELECT COUNT(*) FROM news_tracker_app.news GROUP BY DAY(last_update) ORDER BY DATE(last_update) DESC LIMIT 1";
+		//String query = "SELECT COUNT(*) FROM news_tracker_app.news GROUP BY DAY(last_update) ORDER BY DATE(last_update) DESC LIMIT 1";
+		String query = "SELECT COUNT(*), DATE(last_update) AS update_date\n" +
+				"FROM news_tracker_app.news\n" +
+				"GROUP BY update_date\n" +
+				"ORDER BY update_date DESC\n" +
+				"LIMIT 1";
 		RowMapper<ChartData> rowMapper = new DashboardRowMapperImpl();
 		List<ChartData> chartData = this.jdbcTemplate.query(query, rowMapper);
 		return chartData;
