@@ -28,7 +28,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      run: mvn clean install
+      run: mvn -f News-Tracker-App/pom.xml clean install
 
     - name: Build & push Docker image
       uses: mr-smithers-excellent/docker-build-push@v6
