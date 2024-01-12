@@ -11,7 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import com.company.app.entity.TeamMember;
 
-@SpringBootTest
+//@SpringBootTest
 @Disabled
 class TeamMemberRepositoryTest {
 
