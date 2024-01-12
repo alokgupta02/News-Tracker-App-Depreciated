@@ -29,7 +29,7 @@ public class DataLoader implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         // Creating a dummy Collection of roles
-        Role role = new Role("ADMIN");
+        /*Role role = new Role("ADMIN");
         Collection<Role> dummyRoles = new ArrayList<>();
         dummyRoles.add(role);
 
@@ -50,9 +50,9 @@ public class DataLoader implements CommandLineRunner {
         reporterRepository.save(defReporter2);
         reporterRepository.save(defReporter3);
 
-        /*News defNews = new News(1, "CM_BAITHAK", "AV", "Karnataka", "Bangalore", "High", "Pending",
+        *//*News defNews = new News(1, "CM_BAITHAK", "AV", "Karnataka", "Bangalore", "High", "Pending",
                 null, null, null, null, null);
-        newsRepository.save(defNews);*/
+        newsRepository.save(defNews);*//*
 
         //team member
         //TeamMember defMember1 = new TeamMember(1,"Vishal","Verma",1);
@@ -62,7 +62,6 @@ public class DataLoader implements CommandLineRunner {
         //teamMemberRepository.save(defMember1);
         teamMemberRepository.save(defMember2);
         teamMemberRepository.save(defMember3);
-        teamMemberRepository.save(defMember4);
-
+        teamMemberRepository.save(defMember4);*/
     }
 }

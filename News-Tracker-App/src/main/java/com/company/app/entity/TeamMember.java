@@ -27,11 +27,9 @@ public class TeamMember {
 
 	@NotNull @NotEmpty @NotBlank
 	@Column(name="first_name")
-	@Pattern(regexp = "[a-zA-Z]")
 	private String firstName;
 
 	@NotNull @NotEmpty @NotBlank
-	@Pattern(regexp = "[a-zA-Z]")
 	@Column(name="last_name")
 	private String lastName;
 	
