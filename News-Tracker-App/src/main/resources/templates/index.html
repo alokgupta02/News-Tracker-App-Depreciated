@@ -4,111 +4,224 @@
 <head>
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 
 	<!-- Bootstrap CSS -->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-		crossorigin="anonymous">
+	<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
 	<title>News Tracker App</title>
 </head>
-<style>
-	* {
-		margin: 0;
-		padding: 0;
-		box-sizing: border-box;
-	}
-
-	.section-one {
-		background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)),
-			url(https://images.unsplash.com/photo-1515612148533-6247582c12c7?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NjE4MzU4NzQ&ixlib=rb-1.2.1&q=80);
-		background-size: cover;
-		background-position: center;
-		filter: brightness();
-		height: 100vh;
-		width: 100vw;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-	}
-
-	.container {
-		text-align: center;
-		color: white;
-	}
-
-	h1 {
-		text-transform: uppercase;
-		letter-spacing: 5px;
-		font-size: 4rem;
-		font-weight: 400;
-	}
-
-	p {
-		font-size: 1.15rem;
-		letter-spacing: 3px;
-		margin: 20px 0 40px;
-	}
-
-	.content h1 {
-		font-size: 2.75rem;
-	}
-
-	.content h1::after {
-		content: "";
-		display: block;
-		width: 100%;
-		height: 5px;
-		background: #d1a370;
-	}
-
-	.content p {
-		font-size: 1.1rem;
-		letter-spacing: 2px;
-	}
-
-	.content-image img {
-		width: 300px;
-		object-fit: scale-down;
-	}
-</style>
 
 <body>
-	<div class="container">
-		<header
-			class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+<div class="container">
+	<header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+		<div class="logo"><i class="fas fa-meteor fa-2x"></i>Logo</div>
+		<ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+			<li><a class="nav-link px-2 link-secondary" href="#">Home</a></li>
+			<li><a class="nav-link px-2 link-dark" href="#about">About App</a></li>
+			<li><a class="nav-link px-2 link-dark" href="#feature">Features</a></li>
+			<li><a class="nav-link px-2 link-dark" href="#stack">Tech Stacks</a></li>
+		</ul>
 
-			<div class="logo"><i class="fas fa-meteor fa-2x"></i>Logo</div>
-
-			<ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-				<li><a href="#" class="nav-link px-2 link-secondary">Home</a></li>
-				<li><a href="#" class="nav-link px-2 link-dark">About App</a></li>
-				<li><a href="#" class="nav-link px-2 link-dark">Features</a></li>
-				<li><a href="#" class="nav-link px-2 link-dark">Contact</a></li>
-			</ul>
-
-			<div class="col-md-3 text-end">
-				<a th:href="@{/login}" class="btn btn-outline-primary me-2" role="button">Login</a>
-				<a th:href="@{/registration}" class="btn btn-primary" role="button">Sign-up</a>
-			</div>
-		</header>
-	</div>
-
-	<section class="section-one">
-		<div class="container">
-			<h1>News Tracker App</h1>
-			<p>one stop solution to manage the flow of news item</p>
+		<div class="col-md-3 text-end">
+			<a class="btn btn-outline-primary me-2" role="button" th:href="@{/login}">Login</a>
+			<a class="btn btn-primary" role="button" th:href="@{/registration}">Sign-up</a>
 		</div>
-	</section>
+	</header>
+</div>
 
-	<!-- Optional JavaScript -->
-	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<section class="section-one" id="about">
+	<div class="container">
+		<h1>News Tracker App</h1>
+		<p>News Tracker App is a comprehensive web application designed to revolutionize the news
+			production process, enhancing collaboration between reporters, input teams, output
+			teams, and administrators. Empowering media organizations with efficiency and
+			transparency, this app ensures a smooth journey from news submission to
+			broadcasting.</p>
+	</div>
+</section>
+<section id="feature">
+	<div class="container px-4 py-5" id="icon-grid">
+		<h2 class="pb-2 border-bottom features">App Features</h2>
+		<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
+			<div class="col d-flex align-items-start">
+				<svg class="bi text-muted flex-shrink-0 me-3" height="1.75em" width="1.75em">
+					<use xlink:href="#bootstrap"></use>
+				</svg>
+				<div>
+					<h3 class="fw-bold mb-0 fs-4 pb-2">User-Friendly Reporter Dashboard</h3>
+					<ul>
+						<li>Intuitive interface for reporters to submit news items.</li>
+						<li>Real-time tracking of news submission status.</li>
+						<li>Notifications for updates and feedback from the input team.</li>
+					</ul>
+				</div>
+			</div>
+			<div class="col d-flex align-items-start">
+				<svg class="bi text-muted flex-shrink-0 me-3" height="1.75em" width="1.75em">
+					<use xlink:href="#cpu-fill"></use>
+				</svg>
+				<div>
+					<h3 class="fw-bold mb-0 fs-4 pb-2">Input Team Quality Control</h3>
+					<ul>
+						<li>Dedicated input team module for thorough quality checks.</li>
+						<li>Options to pass, reject, or hold news items for clarification.</li>
+						<li>Efficient communication channels between reporters and input team.</li>
+					</ul>
+				</div>
+			</div>
+			<div class="col d-flex align-items-start">
+				<svg class="bi text-muted flex-shrink-0 me-3" height="1.75em" width="1.75em">
+					<use xlink:href="#calendar3"></use>
+				</svg>
+				<div>
+					<h3 class="fw-bold mb-0 fs-4 pb-2">Output Team News Refinement</h3>
+					<ul>
+						<li>Seamless transition from approved raw news to polished, readable content.
+						</li>
+						<li>Collaborative environment for output team members to refine news stories.
+						</li>
+						<li>Version control for tracking changes and improvements.</li>
+					</ul>
+				</div>
+			</div>
+			<div class="col d-flex align-items-start">
+				<svg class="bi text-muted flex-shrink-0 me-3" height="1.75em" width="1.75em">
+					<use xlink:href="#home"></use>
+				</svg>
+				<div>
+					<h3 class="fw-bold mb-0 fs-4 pb-2">Administrator Insights</h3>
+					<ul>
+						<li>Admin dashboard providing a holistic view of the entire news production
+							process.
+						</li>
+						<li>Drill-down options to filter news items by state or district.</li>
+						<li>Performance analytics for input and output teams.</li>
+					</ul>
+				</div>
+			</div>
+			<div class="col d-flex align-items-start">
+				<svg class="bi text-muted flex-shrink-0 me-3" height="1.75em" width="1.75em">
+					<use xlink:href="#speedometer2"></use>
+				</svg>
+				<div>
+					<h3 class="fw-bold mb-0 fs-4 pb-2">User Management</h3>
+					<ul>
+						<li>Role-based access control for reporters, input teams, output teams, and
+							administrators.
+						</li>
+						<li>Easy onboarding and removal of team members as needed.</li>
+					</ul>
+				</div>
+			</div>
+			<div class="col d-flex align-items-start">
+				<svg class="bi text-muted flex-shrink-0 me-3" height="1.75em" width="1.75em">
+					<use xlink:href="#toggles2"></use>
+				</svg>
+				<div>
+					<h3 class="fw-bold mb-0 fs-4 pb-2">Communication Hub</h3>
+					<ul>
+						<li>Integrated messaging system for efficient communication between teams.</li>
+						<li>Centralized platform for discussions, updates, and clarifications.</li>
+					</ul>
+				</div>
+			</div>
+			<div class="col d-flex align-items-start">
+				<svg class="bi text-muted flex-shrink-0 me-3" height="1.75em" width="1.75em">
+					<use xlink:href="#geo-fill"></use>
+				</svg>
+				<div>
+					<h3 class="fw-bold mb-0 fs-4 pb-2">Data Security</h3>
+					<ul>
+						<li>Secure authentication and authorization protocols to protect sensitive news
+							information.
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="col d-flex align-items-start">
+				<svg class="bi text-muted flex-shrink-0 me-3" height="1.75em" width="1.75em">
+					<use xlink:href="#tools"></use>
+				</svg>
+				<div>
+					<h3 class="fw-bold mb-0 fs-4 pb-2">Mobile Compatibility</h3>
+					<ul>
+						<li>Responsive design for access on various devices, facilitating on-the-go
+							updates and submissions.
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section id="stack" class="section-one">
+	<div class="container">
+		<h1>Tech Stacks</h1>
+		<div class="row row-cols-1 row-cols-md-2 mb-2 text-center">
+			<div class="col">
+				<div class="card mb-4 rounded-3 shadow-sm border-primary">
+					<div class="card-header py-3 text-bg-primary border-primary">
+						<h4 class="my-0 fw-normal">Frontend</h4>
+					</div>
+					<div class="card-body">
+						<div class="col-md-4">
+							<ul class="text-start">
+								<li>HTML</li>
+								<li>CSS</li>
+								<li>Javascript</li>
+								<li>BootstrapV5</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card mb-4 rounded-3 shadow-sm border-primary">
+					<div class="card-header py-3 text-bg-primary border-primary">
+						<h4 class="my-0 fw-normal">Backend</h4>
+					</div>
+					<div class="card-body">
+						<div class="col">
+							<ul class="text-start">
+								<li>Microservice architecture:
+									<ul class="mr-0">
+										<li>API Gateway</li>
+										<li>Circuit Breaker</li>
+									</ul>
+								</li>
+								<li>Springboot module:
+									<ul>
+										<li>Security</li>
+										<li>AOP</li>
+										<li>Data JPA</li>
+										<li>Cloud</li>
+									</ul>
+								</li>
+								<li>Hibernate</li>
+								<li>Java</li>
+								<li>JUnit/Mockito</li>
+								<li>Documentation: Swagger</li>
+								<li>Database: AWS RDS</li>
+								<li>Cloud: AWS</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<footer class="footer mt-auto py-3 bg-light">
+	<div class="container">
+		<span class="text-muted">© Copyright News Tracker App 2024 created by Alok Gupta</span>
+	</div>
+</footer>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
-		crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
-		crossorigin="anonymous"></script>
+<script crossorigin="anonymous" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"></script>
+<script crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"></script>
 
 </body>
 
